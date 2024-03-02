@@ -57,7 +57,7 @@
                 <li class="nav-item">
                     <a class="nav-link position-relative " routerLink="/cart"  *ngIf="isLogin"  routerLinkActive="text-main">
                         <i class="fas fa-cart-shopping text-main"></i>
-                        <span class="badge bg-info text-light position-absolute top-0 start-50 " *ngIf="cartNumber>0">{{cartNumber}}</span>
+                        <span class="badge bg-info text-light position-absolute   top-0 start-50" *ngIf="cartNumber>0">{{cartNumber}}</span>
                     </a>
 
                 </li>
@@ -65,12 +65,12 @@
                     <a class="nav-link mx-3" (click)="logOut()" href=""> log Out</a>
 
                 </li>
-                <!-- <li class="nav-item d-flex justify-content-center align-items-center ">
+                <li class="nav-item d-flex justify-content-center align-items-center ">
                     <i class="fa-brands fa-facebook"></i>
                     <i class="fa-brands fa-linkedin mx-3"></i>
                     <i class="fa-brands fa-twitter"></i>
 
-                </li> -->
+                </li>
 
             </ul>
 

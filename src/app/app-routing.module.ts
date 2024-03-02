@@ -19,7 +19,7 @@ import { CategoryMainComponent } from './category-main/category-main.component';
 
 const routes: Routes = [
   
-  {path:'',component:HomeComponent,pathMatch:'full'},
+  {path:'',redirectTo:"home",pathMatch:'full'},
   {path:'home',canActivate:[authGuard],component:HomeComponent},
   {path:'brands',canActivate:[authGuard],component:BrandsComponent},
   {path:'category',canActivate:[authGuard],component:CategoryMainComponent},
