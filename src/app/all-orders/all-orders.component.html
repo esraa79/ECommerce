@@ -1,0 +1,51 @@
+<div class="container w-75 my-5 pt-5">
+    <div class="row rounded  ">
+        <div *ngFor=" let order of orderlist,let i=index " class="col-md-12  ">
+            <div class="row border rounded shadow mb-5">
+                <div class="col-sm-3 col-md-3 bg-dark-subtle   opacity-75  py-2">
+                    
+                    <p class="text-black fw-bold ">{{i+1}}. Order Date:
+                        <span id="order_date" class="text-main">{{ order?.createdAt | date : "dd/MM/yyyy"}}</span>
+                    </p>
+                </div>
+                <div class="col-sm-3 col-md-3 bg-dark-subtle opacity-75  py-2">
+                    <p class="text-black fw-bold ">Total Price : <span class="text-main  ">{{order?.totalOrderPrice | currency:'e£ '}}</span></p>
+                </div>
+
+                
+
+                <div class="col-sm-3 col-md-3 bg-dark-subtle opacity-75  py-2">
+                    <p class="text-black fw-bold  ">Payment : 
+                        <span class="text-main  ">{{order?.paymentMethodType}}</span></p>
+                </div>
+
+                <div class="col-sm-3 col-md-3 bg-dark-subtle opacity-75  py-2">
+                    <p class="text-black fw-bold  ">Itmes : 
+                        <span class="text-main  ">{{order?.cartItems.length}}</span></p>
+                </div>
+                
+
+                <div class='row mt-4 pb-4 g-4 ' >
+                    <div class="col-md-4" *ngFor="let cart of order.cartItems">
+                        <div class="product overflow-hidden p-3 border shadow rounded h-100">
+                        <div class="productLayer  p-4 text-center" [routerLink]="['/productsDetails',cart.product.id] " >                        
+                                <img [src]="cart.product?.imageCover" class="w-25" [alt]="cart.product?.title" />
+                                <p class="text-main ">{{cart.product.title}}</p>  
+                                <p class="text-main badge bg-body-secondary">{{cart.product.category.name|uppercase}}</p>  
+                                <div class="d-flex justify-content-between ">
+                                    <p class="text-black-50"><span class="text-black ">Price:</span> {{cart?.price| currency:'e£ '}} </p>
+                                    <p class="text-black-50"><span class="text-black">count:</span> {{cart?.count}} </p>
+                                </div>                       
+                        </div>
+                    </div>
+                    </div>
+             
+                    
+                
+            </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

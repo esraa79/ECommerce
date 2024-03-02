@@ -1,0 +1,29 @@
+<div class="container  pt-5 min-vh-100 ">
+    <div class="row my-5">
+        <div class="col-md-3">
+            <img [src]="productdetails?.imageCover" [alt]="productdetails?.title" class="w-100"/>
+        </div>
+        <div class="col-md-9">
+            <div class="layer  h-100 d-flex flex-column justify-content-evenly ">
+                <div>
+                    <h2>{{productdetails?.title}}</h2>
+                    <p class="text-mute">{{productdetails?.description}}</p>
+                </div>
+                <div>
+                    <p class="text-main">{{productdetails?.category?.name}}</p>
+                    <div class="d-flex justify-content-between ">
+                        <p class="text-main">{{productdetails?.price | currency:'e£ '}} </p>
+                        <p class="text-main">{{productdetails?.ratingsAverage}}
+                        <i class="fa-solid fa-star rating-color"></i></p>
+                    </div> 
+                    <button class="btn bg-main w-100 text-light" (click)="addtoCart(productdetails._id)">
+                       <span> <i class="fas fa-cart-shopping "></i></span> 
+                        add to cart</button>
+
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
